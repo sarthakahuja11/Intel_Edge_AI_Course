@@ -1,0 +1,40 @@
+
+1.) Source ENV:
+
+pip install requests pyyaml -t /usr/local/lib/python3.5/dist-packages && clear && source /opt/intel/openvino/bin/setupvars.sh -pyver 3.5
+
+2.) human-pose
+
+sudo ./downloader.py -o ~ --name human-pose-estimation-0001
+
+3.) text-detection
+
+sudo ./downloader.py -o ~ --name text-detection-0004 --precisions FP16
+
+4.) determining Car Type & Color
+
+sudo ./downloader.py -o ~ --name vehicle-attributes-recognition-barrier-0039 --precisions INT8
+
+5.) to check downloads
+
+(venvv) root@ce761d875e8a:/opt/intel/openvino/deployment_tools/open_model_zoo/tools/downloader/intel
+root@ce761d875e8a:~# ls
+intel
+(venv) root@ce761d875e8a:~# cd intel
+(venv) root@ce761d875e8a:~/intel# ls
+human-pose-estimation-0001  vehicle-attributes-recognition-barrier-0039
+text-detection-0004
+
+
+OFFICIAL:
+
+
+cd /opt/intel/openvino/deployment_tools/open_model_zoo/tools/downloader
+
+
+sudo ./downloader.py --name human-pose-estimation-0001 -o /home/workspace
+
+sudo ./downloader.py --name text-detection-0004 --precisions FP16 -o /home/workspace
+
+sudo ./downloader.py --name vehicle-attributes-recognition-barrier-0039 --precisions INT8 -o /home/workspace
+
